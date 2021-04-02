@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bloom Tutorial</title>
+    
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- for speed -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Lobster&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+          color: #896D88;
+          font-family: 'Exo 2', sans-serif;
+        }
+        
+        #name {
+          font-family: 'Lobster', cursive;
+          color:#FCEFF6;
+          text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+
+        #main-txt {
+          color: white;
+        }
+
+        p {
+          font-family: 'Exo 2', sans-serif;
+          color: #616161;
+        }
+
+        #middle {
+          position: relative;
+          top: 30%;
+        }
+
+        #head{
+            height: 70vh;
+            background: #896D88;
+        }
+
+        #top {
+          position: absolute;
+        }
+
+        .bg {
+          background-color: #FCEFF6;
+        }
+
+        .cardImg {
+          height: 50%;
+        }
+
+        .bg-grey {
+          background-color: #F5F6F8;
+        }
+
+        ol {
+          color: #616161;
+        }
+
+        .code-block {
+          padding: 10px;
+          border-radius: 5px;
+          margin: 10px;
+        }
+
+        .social{
+          font-size: 4em;
+          text-align: center;
+        }
+
+        /* // Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) { 
+          #top{
+            top: -180%;
+          right: -22%;
+          width: 5%;
+          }
+        
+        }
+
+        /* // Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) { }
+
+        /* // Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) { 
+          #top{
+            top: -180%;
+          right: -22%;
+          width: 60%;
+          }
+        }
+
+        /* // Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) { 
+          #name {
+            font-size: 5vw;
+          }
+
+          #main-txt {
+            font-size: 1.2vw;
+          }
+
+          p {
+            font-size: 0.8vw;
+          }
+
+          #top{
+            top: -110%;
+          right: -2%;
+          width: 50%;
+          }
+
+        }
+
+        @media (min-width: 1400px) { 
+          #top{
+            top: -110%;
+          right: -12%;
+          width: 50%;
+          }
+
+        }
+
+    </style>
+    
+</head>
+<body>
+    <!-- hero -->
+  <div class="container-fluid" id="head">
+      <div class="container text-center" id="middle">
+        <!-- <div>
+          <svg id="top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1400 770">
+          <defs>
+            <filter id="Path_44" x="0" y="0" width="1482" height="773.582" filterUnits="userSpaceOnUse">
+              <feOffset dx="-22" dy="6" input="SourceAlpha"/>
+              <feGaussianBlur stdDeviation="11" result="blur"/>
+              <feFlood flood-opacity="0.388"/>
+              <feComposite operator="in" in2="blur"/>
+              <feComposite in="SourceGraphic"/>
+            </filter>
+            <filter id="Path_45" x="462.324" y="0" width="1018.342" height="642.084" filterUnits="userSpaceOnUse">
+              <feOffset dx="-22" dy="6" input="SourceAlpha"/>
+              <feGaussianBlur stdDeviation="11" result="blur-2"/>
+              <feFlood flood-opacity="0.388"/>
+              <feComposite operator="in" in2="blur-2"/>
+              <feComposite in="SourceGraphic"/>
+            </filter>
+            <filter id="Path_46" x="578.596" y="0" width="902.592" height="544.031" filterUnits="userSpaceOnUse">
+              <feOffset dx="-22" dy="6" input="SourceAlpha"/>
+              <feGaussianBlur stdDeviation="11" result="blur-3"/>
+              <feFlood flood-opacity="0.388"/>
+              <feComposite operator="in" in2="blur-3"/>
+              <feComposite in="SourceGraphic"/>
+            </filter>
+            <filter id="Path_47" x="862.692" y="0" width="618.496" height="479.65" filterUnits="userSpaceOnUse">
+              <feOffset dx="-22" dy="6" input="SourceAlpha"/>
+              <feGaussianBlur stdDeviation="11" result="blur-4"/>
+              <feFlood flood-opacity="0.388"/>
+              <feComposite operator="in" in2="blur-4"/>
+              <feComposite in="SourceGraphic"/>
+            </filter>
+          </defs>
+          <g id="Group_29" data-name="Group 29" transform="translate(371 -16337)">
+            <g transform="matrix(1, 0, 0, 1, -371, 16337)" filter="url(#Path_44)">
+              <path id="Path_44-2" data-name="Path 44" d="M1100,17010.666s-77.333,74.668-212,58.668S653.333,16976,653.333,16976,604,16932,464,16890.666s-316-85.332-316-85.332S-49.333,16729-165.333,16618.666-316,16364-316,16364H1100Z" transform="translate(371 -16337)" fill="#eacbeb"/>
+            </g>
+            <g transform="matrix(1, 0, 0, 1, -371, 16337)" filter="url(#Path_45)">
+              <path id="Path_45-2" data-name="Path 45" d="M174.667,16364s-45.333,97.334-21.333,201.334S236,16714.666,236,16714.666s46.667,38.668,126.667,56c58.667,10.668,154.348,18.35,206.667,37.334,154.333,56,151.667,117,284,130.666s245.333-76,245.333-76V16364Z" transform="translate(371 -16337)" fill="#e0f2f4"/>
+            </g>
+            <g transform="matrix(1, 0, 0, 1, -371, 16337)" filter="url(#Path_46)">
+              <path id="Path_46-2" data-name="Path 46" d="M279.041,16364s-40.318,116.393,5.3,210.82,144.295,100.795,144.295,100.795,108.752,19.1,214.32,60.477,118.566,80.369,217.5,100.793,188.857-26.525,188.857-26.525l49.867-31.828V16364Z" transform="translate(371 -16337)" fill="#fed3e6"/>
+            </g>
+            <g transform="matrix(1, 0, 0, 1, -371, 16337)" filter="url(#Path_47)">
+              <path id="Path_47-2" data-name="Path 47" d="M580.363,16364s-63.659,108.965-15.915,203.393S709.8,16678.8,709.8,16678.8s46.418,6.9,111.4,32.891,76.922,62.068,146.417,65.781,131.563-50.928,131.563-50.928V16364Z" transform="translate(371 -16337)" fill="#fceff6"/>
+            </g>
+          </g>
+          </svg>
+        </div> -->
+        
+        <h1 id="name">Bloom</h1>
+        <p id="main-txt" class="pt-xl-5 pt-lg-2">Decorate your home with personalised flowers that light up</p>
+        
+        
+      </div>
+    </div> 
+      <!-- ---------- navigation------------ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg sticky-top">
+      <div class="container-fluid row">
+        <button class="navbar-toggler text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav col-12 mb-2 mb-lg-0 d-flex justify-content-center">
+            <li class="nav-item">
+              <a href="#things" class="nav-link">Things you'll need</a>
+            </li>
+            <li class="nav-item">
+              <a href="#create" class="nav-link">Create flowers</a>
+            </li>
+            <li class="nav-item">
+              <a href="#setup" class="nav-link">Setup Arduino</a>
+            </li>
+            <li class="nav-item">
+              <a href="#test" class="nav-link">Test the lights</a>
+            </li>
+            <li class="nav-item">
+              <a href="#fix" class="nav-link">Fix LEDs</a>
+            </li>
+            <li class="nav-item">
+              <a href="#code" class="nav-link">Code Arduino</a>
+            </li>
+            <li class="nav-item">
+              <a href="#install" class="nav-link">Install the Flowers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
+      <!-- ---------- things you will need------------ -->
+      <div class="container container-fluid mt-5" id="things">
+        <div class="my-5">  
+        <h2>Things you will need</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 mx-3 mx-lg-5">
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="paper.jpg" class="card-img-top img-fluid cardImg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Paper</h5>
+                  <p class="card-text">You will need 5 sheets of paper to make a small flower.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="scissors.jpg" class="card-img-top cardImg img-fluid" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Glue and Scissors</h5>
+                  <p class="card-text">Glue and scissors will be used to cut the paper and stick it together.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="arduino.jpg" class="card-img-top img-fluid cardImg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Arduino Uno Microcontroller</h5>
+                  <p class="card-text">This controller will allow you to not only switch the leds on or off but also program a personal light show.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="wires.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Breadboard and Jumper wires</h5>
+                  <p class="card-text">These will be used to create the circuit and connect the controller to the flower.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="battery.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">9V battery and battery snap</h5>
+                  <p class="card-text">These will allow you to power and operate the installation away from the computer.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="LED.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">5 LEDs per flower</h5>
+                  <p class="card-text">The LEDs will light up the flower. If you want the flower to change colors, then you might want to use an RGB LED light.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col my-3">
+              <div class="card h-100">
+                <img src="potentio.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Potentiometer</h5>
+                  <p class="card-text">You will need this to control the RGB values of LED. You might not need this if you are using the same colored LEDs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ------------ create the flower---------- -->
+      <div class="container-fluid my-5" id="create">
+        <div class="container mt-5">
+          <div class="row padding">
+            <div class="col-md-12 col-lg-6">
+              <h2>Create the flowers</h2>
+              <p>This tutorial follows the steps to create a paper rose. However, the decor could be designed as per your preferences. You could choose from a variety of flowers such as gardenias, peonies, carnations, or any other flower with layers of petals to mask the LEDs. 
+                You may even use fabric to create the flower to give it a softer texture. Pro tip: Try to use white colored paper (or fabric) to make the lights shine brighter. Follow the steps in the video to create the flowers.</p>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <iframe width="480" height="270" src="https://www.youtube.com/embed/YUrlSqixP7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- ---------- setup the arduino------------ -->
+       <div class="container-fluid my-5 bg-grey" id="setup">
+        <div class="container">
+          <div class="row py-5">
+            <h2 class="mb-4">Setup the Arduino</h2>
+            <div class="col-md-12 col-lg-6" style="padding-right: 100px;">
+              <p>The arduino is connected to a potentiometer which in turn transfers the power to the LEDs in the flower. The LEDs are connected back to the arduino to control which color is on or off based on the code.
+                The potentiometer acts as a dimmer for the lights depending on how much it is turned.
+              </p>
+              <ol>
+                <li>Connect one power output to the positive terminal</li>
+                <li>Connect the ground to the negative terminal </li>
+                <li>Attach an LED and connect a resistor to the positive side and connect the negative side to the negative terminal</li>
+                <li>Repeat for all LEDs</li>
+                <li>Attach a potentiometer to the breadboard, connect one terminal to the positive and one to the negative. Connect the center pin to an analog input.</li>
+              </ol>  
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <img src="circuitSetup.jpg" style="width: 400px;" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- ----------- test the lights ----------- -->
+      <div class="container-fluid my-5" id="test">
+        <div class="container">
+          <h2 class="mb-4">Test the lights</h2>
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 img-fluid">
+              <img src="LEDrainbow.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <pre class="code-block prettyprint lang-html"><code>  
+  // variables for digital pin 2 to 11
+  int led1 = 2;
+
+  void setup() {
+    //initialise digital pin as output 
+    pinMode(led1, OUTPUT);
+  }
+
+  void loop() {
+    Serial.print("Hello world");
+    // light turns on and off   
+    digitalWrite(led1, HIGH);
+    delay (800);
+    digitalWrite(led1, LOW);
+    //delay (200);
+  }
+  
+</code></pre>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <p>Check the LEDs to see that they are working properly and that you don't have a faulty one. This will be helpful as it would be difficult to remove a faulty LED after the installation. Moreover, it will not cause the loop to stop and break down the whole installation. Use the above code as a sample to test one LED. You can add more variables and code more outputs  </p>
+          </div>
+        </div>
+      </div>
+
+       <!-- ---------- fix the LEDs ------------ -->
+       <div class="container-fluid my-5 bg-grey" id="fix">
+        <div class="container mt-5">
+          <div class="row py-5">
+            <h2 class="mb-4">Fix the LEDs</h2>
+            <div class="col-md-12 col-lg-6" style="padding-right: 100px;">
+              <p>Prepare the LEDs by attatching them to a long wire. Make sure to keep the wires separate as they will cause disturbances if entangled. To be safe use insulated wires or cover them with electrical tape. After enlarging the scope of the LEDs, make small holes into the back of the flower and attach the LEDs to the flower. Spread them out appropriately to keep the light contained yet spread out.
+              </p>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <img src="fixed.jpg" style="width: 300px;" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+       
+
+
+      <!-- ----------- code the arduino ----------- -->
+      <div class="container-fluid my-5" id="code">
+        <div class="container mt-5">
+          <h2 class="mb-4">Code the Arduino</h2>
+          <p class="mb-4">Code the adjusted LEDs to blink, change color, light up in a pattern or anything else you can think of! The code below uses one RGB LED and changes color every 1 second.</p>
+          <div class="row">
+            <div class="col-sm-12 col-lg-4 container-fluid">
+              <img src="protoFlower1.jpg" class="img-fluid" alt="...">
+              <img src="protoFlower2.jpg" class="img-fluid" alt="...">
+              <img src="protoFlower.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col-sm-12 col-lg-7">
+              <pre class="code-block prettyprint lang-html"><code>  
+  int red_light_pin= 9;
+  int green_light_pin = 11;
+  int blue_light_pin = 10;
+  void setup() {
+    pinMode(red_light_pin, OUTPUT);
+    pinMode(green_light_pin, OUTPUT);
+    pinMode(blue_light_pin, OUTPUT);
+  }
+  void loop() {
+    
+    RGB_color(255, 0, 0); // Red
+    delay(1000);
+    RGB_color(255, 255, 0); // orange
+    delay(1000);
+    RGB_color(0, 255, 0); // Green
+    delay(1000);
+    RGB_color(0, 0, 255); // Blue
+    delay(1000);
+    RGB_color(255, 255, 125); // Raspberry
+    delay(1000);
+    RGB_color(0, 255, 255); // Cyan
+    delay(1000);
+    RGB_color(255, 0, 255); // Magenta
+    delay(1000);
+    RGB_color(255, 255, 0); // Yellow
+    delay(1000);
+    RGB_color(255, 255, 255); // White
+    delay(1000);
+  }
+  void RGB_color(int red_light_value, int green_light_value, int blue_light_value) {
+    analogWrite(red_light_pin, red_light_value);
+    analogWrite(green_light_pin, green_light_value);
+    analogWrite(blue_light_pin, blue_light_value);
+  }
+  
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- finished product------------ -->
+      <div class="container-fluid my-5" id="install">
+        <div class="container mt-5">
+          <h2 class="mb-4">Install the Flowers</h2>
+          <div class="my-4">
+            <p>Install the flowers on the wall, ceiling or canvas. Your custom light flower installation is ready to Bloom and entertain!</p>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-lg-4 container-fluid">
+              <img src="flower.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col-sm-12 col-lg-4 container-fluid">
+              <img src="flower2.jpg" class="img-fluid" alt="...">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- ---------- finished product------------ -->
+      <div class="container-fluid">
+        <div class="container my-5">
+          <h2 class="mb-4 text-center">Show off your creation!</h2>
+          <div class="row social mb-5">
+            <div class="col-3">
+            </div>
+            <div class="col-1">
+              <a href="https://www.facebook.com/"><i class="icon-facebook-sign" style="color: #3b5998;"></i></a>
+            </div>
+            <div class="col-1">
+              <a href="https://twitter.com/"><i class="icon-twitter" style="color: #00aced;"></i></a>              
+            </div>
+            <div class="col-1">
+              <a href="https://instagram.com"><i class="icon-instagram" style="color: #517fa4;"></i></a>              
+            </div>
+            <div class="col-1">
+              <a href="https://pinterest.com"><i class="icon-pinterest-sign" style="color: #c8232c;"></i></a>  
+            </div>
+            <div class="col-1">
+              <a href="https://pinterest.com"><i class="icon-dribbble" style="color: #ea4c89;"></i></a>  
+            </div>
+            <div class="col-1">
+              <a href="https://pinterest.com"><i class="icon-github" style="color: #171515;"></i></a>  
+            </div>
+            <div class="col-3">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------------------- -->
+      <div style="height: 5vw; background-color: #896D88;">
+        <p class="text-center align-middle" style="color: white; position: relative; top: 30%;">Designed and developed by Tanisha Gupta</p>
+      </div>
+      
+      
+</body>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</html>
